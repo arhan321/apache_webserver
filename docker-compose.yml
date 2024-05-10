@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  test_forward:
+    build: .
+    container_name: test_forward
+    image: latest
+    volumes:
+      - ./charge:/var/www/html
+      - ./httpd.vhost.conf:/etc/apache2/sites-available/000-default.conf
+    ports:
+      - 71:80
